@@ -1,0 +1,13 @@
+################################################################################
+## Inheriting configs from ACK
+. ${ROOT_DIR}/msm-kernel/build.config.msm.sdxpinn.common
+
+################################################################################
+## Variant setup
+MSM_ARCH=sdxpinn
+
+################################################################################
+## Inheriting MSM configs
+. ${KERNEL_DIR}/build.config.msm.common
+. ${KERNEL_DIR}/build.config.msm.csm
+
