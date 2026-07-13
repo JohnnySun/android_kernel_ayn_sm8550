@@ -92,10 +92,6 @@ static ssize_t get_core_ctl_register(struct kobject *kobj,
 static ssize_t set_core_ctl_register(struct kobject *kobj,
 	struct kobj_attribute *attr, const char *buf,
 	size_t count);
-
-static struct kobj_attribute core_ctl_register_attr =
-	__ATTR(core_ctl_register, 0644, get_core_ctl_register,
-	set_core_ctl_register);
 #endif
 static ssize_t get_splh_sample_ms(struct kobject *kobj,
 	struct kobj_attribute *attr, char *buf);

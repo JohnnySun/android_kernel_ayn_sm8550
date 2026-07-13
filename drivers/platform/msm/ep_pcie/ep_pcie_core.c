@@ -15,6 +15,7 @@
 #include <linux/debugfs.h>
 #include <linux/delay.h>
 #include <linux/gpio.h>
+#include <linux/init.h>
 #include <linux/iopoll.h>
 #include <linux/kernel.h>
 #include <linux/platform_device.h>
@@ -4961,6 +4962,7 @@ static struct platform_driver ep_pcie_driver = {
 	},
 };
 
+#ifndef MODULE
 static int __init ep_pcie_hot_reset(char *str)
 {
 	if (!strcmp(str, "disable_hot_reset"))
@@ -4987,6 +4989,7 @@ static int __init ep_pcie_l1_disable(char *str)
 	return 0;
 }
 early_param("ep_pcie_l1_cfg", ep_pcie_l1_disable);
+#endif
 
 static int __init ep_pcie_init(void)
 {

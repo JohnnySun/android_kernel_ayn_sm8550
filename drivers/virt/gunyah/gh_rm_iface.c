@@ -1634,6 +1634,7 @@ out:
 	kfree(resp_payload);
 	return gh_vm_crash_msg;
 }
+EXPORT_SYMBOL(gh_rm_vm_get_crash_msg);
 
 static void gh_rm_populate_acl_desc(struct gh_acl_desc *dst_desc,
 				    struct gh_acl_desc *src_desc)

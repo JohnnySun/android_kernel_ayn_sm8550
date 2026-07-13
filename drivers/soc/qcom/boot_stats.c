@@ -73,7 +73,7 @@ static int num_markers;
 static DECLARE_HASHTABLE(marker_htable, 5);
 
 
-#if IS_ENABLED(CONFIG_QCOM_SOC_SLEEP_STATS)
+#if IS_REACHABLE(CONFIG_QCOM_SOC_SLEEP_STATS)
 static u64 get_time_in_msec(u64 counter)
 {
 	counter *= MSEC_PER_SEC;
@@ -540,7 +540,7 @@ static int init_bootkpi(void)
 	INIT_LIST_HEAD(&boot_marker_list.list);
 	spin_lock_init(&boot_marker_list.slock);
 
-#if IS_ENABLED(CONFIG_QCOM_SOC_SLEEP_STATS)
+#if IS_REACHABLE(CONFIG_QCOM_SOC_SLEEP_STATS)
 	ret = register_pm_notifier(&boot_kpi_pm_nb);
 	if (ret)
 		pr_err("boot_marker: power state notif error\n");
